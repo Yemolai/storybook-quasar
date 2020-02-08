@@ -17,4 +17,6 @@ module.exports = cfg => {
     use: ['css-loader', 'sass-loader'],
     include: path.resolve(__dirname, '../')
   })
+
+  return cfg
 }
