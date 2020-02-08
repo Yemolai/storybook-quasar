@@ -1,7 +1,7 @@
 // Configuration for your app
 // https://quasar.dev/quasar-cli/quasar-conf-js
 
-const extendWebpack = require('../webpack-config.js')
+const extendWebpack = require('./webpack-config.js')
 
 module.exports = function (ctx) {
   return {
