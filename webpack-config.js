@@ -1,6 +1,16 @@
 const path = require('path')
+const aliases = require('./aliases')
 
 module.exports = cfg => {
+  const alias = aliases('.')
+
+  console.log({ alias })
+
+  cfg.resolve.alias = {
+    ...cfg.resolve.alias,
+    ...alias
+  }
+
   cfg.module.rules.push({
     enforce: 'pre',
     test: /\.(js|vue)$/,
@@ -12,6 +22,7 @@ module.exports = cfg => {
         .getFormatter('stylish')
     }
   })
+
   cfg.module.rules.push({
     test: /\.s(c|a)ss$/,
     use: ['css-loader', 'sass-loader'],
